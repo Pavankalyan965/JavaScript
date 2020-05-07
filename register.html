@@ -1,0 +1,110 @@
+<head>
+<link rel="stylesheet" href="style.css">
+<script>
+function  validate()
+{
+	var uname=document.form2.t1.value;
+	var pwd=document.form2.t2.value;
+	var mobile=document.form2.t3.value;
+	
+	if(uname=="")
+		{
+		alert("Please Enter Username : ");
+		document.form2.t1.focus();
+		return false;
+		}
+	  
+	if((uname.length<5) || (uname.length>15))
+		{
+		alert("Username should contains 5-15 characters only");
+		document.form2.t1.select();
+		return false;
+		}
+	
+	
+	if(pwd=="")
+	{
+	alert("Please Enter Password : ");
+	document.form2.t2.focus();
+	return false;
+	}
+	
+	    if(mobile=="")
+		{
+		   alert("Please enter mobile number");
+		   document.form2.t3.focus();
+		   return false;
+		}
+	    if(mobile.length!=10)
+	   	{
+	    	alert("Mobile number should be 10 digits");
+	    	document.form2.t3.focus();
+			   return false;
+	   	}
+	    if(isNaN(mobile))
+	    {
+	   alert("Please enter valid mobile number");
+	   document.form2.t3.focus();
+	   return false;
+	   	}
+	    var gender=document.form2.t4;
+	    if(!gender[0].checked && !gender[1].checked )
+	   {
+	    	alert("plese select gender");
+	    	return false;
+	  	}
+	    
+	    var tech=document.form2.t5;
+	    if(!tech[0].checked && !tech[1].checked && !tech[2].checked  )
+	   {
+	    	alert("plese select Technology");
+	    	return false;
+	  	}
+	    
+	    if(document.form2.t6.selectedIndex==0)
+	    	{
+	    	alert("plese select City");
+	    	return false;
+	    	}
+	
+}
+	</script>
+</head>
+<body>
+<div class="d1">
+
+
+
+</div>
+<center>
+<div class="login">
+<form action="reqreg" name="form2"   onsubmit="return validate();">
+
+<table>
+
+<h1> Registration Form</h1>
+
+<tr><th><h2>UserName:</h2> </th><th><input type=text name="t1" size=30% ></th></tr>
+ 
+<tr><th><h2>Password: </h2></th><th><input type=password name="t2" size=30% ></th></tr>
+<tr><th><h2>Mobile: </h2></th><th><input type=text name="t3" size=30% ></th></tr>
+<tr><th><h2>Gender: </h2></th><th><input type=radio name="t4" size=30% >Male<input type=radio name="t4" size=30% >Female </th></tr>
+<tr><th><h2>Technologies: </h2></th><th><input type=checkbox name="t5" size=30% >JAVA <input type=checkbox name="t5" size=30% >Python 
+ <input type=checkbox name="t5" size=30% >Data science</th></tr>
+<tr><th><h2>City</h2></th><th>
+<select name="t6">
+<option>Select City</option>
+<option>Hyderabad</option>
+<option>Guntur</option>
+<option>Pune</option>
+<option>Bglr</option>
+
+</select> </th></tr>
+
+
+
+
+<tr><th><input type=submit value="Register"> </th><th><input type=reset value="Clear"></th></tr>
+</table>
+</form>
+</div>
